@@ -10,8 +10,10 @@ class ProductsPage {
     );
     this.cartIcon = page.locator('.shopping_cart_link');
     this.cartBadge = page.locator('.shopping_cart_badge');
+
+    // Fixed sort dropdown locator
     this.sortDropdown = page.locator(
-      '[data-test="product_sort_container"]'
+      'select.product_sort_container'
     );
   }
 
@@ -28,10 +30,14 @@ class ProductsPage {
   }
 
   async sortProducts(sortOption) {
+    // Wait for dropdown to be visible first
+    await this.sortDropdown.waitFor({ state: 'visible' });
     await this.sortDropdown.selectOption(sortOption);
   }
 
   async getFirstProductName() {
+    // Wait for products to reload after sort
+    await this.page.waitForTimeout(500);
     return await this.productTitle.first().textContent();
   }
 }
