@@ -30,8 +30,8 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
-    headless: false, // Show browser during interview!
-  },
+    headless: true, 
+    },
 
   // Multi-browser testing
   projects: [
