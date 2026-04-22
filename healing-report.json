@@ -1,0 +1,11 @@
+[
+  {
+    "element": "Add To Cart Button",
+    "originalLocator": "[data-test=\"add-to-cart-BROKEN-xyz-999\"]",
+    "healedLocator": "[data-test=\"add-to-cart-sauce-labs-backpack\"]",
+    "strategy": "data-test-attribute",
+    "confidence": "80%",
+    "timestamp": "2026-04-22T04:16:48.817Z",
+    "status": "HEALED"
+  }
+]
